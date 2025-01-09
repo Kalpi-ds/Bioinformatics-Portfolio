@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+        header { background: #333; color: white; padding: 15px; text-align: center; }
+        nav { display: flex; justify-content: center; background-color: #f4f4f4; }
+        nav button { padding: 15px; border: none; cursor: pointer; background: inherit; }
+        nav button:hover, nav button.active { background-color: #ddd; }
+        .tabcontent { display: none; padding: 20px; }
+        .tabcontent.active { display: block; }
+        footer { background: #333; color: white; text-align: center; padding: 10px 0; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to My Portfolio</h1>
+    </header>
+    <nav>
+        <button onclick="openTab(event, 'AboutMe')" class="active">About Me</button>
+        <button onclick="openTab(event, 'Portfolio')">Portfolio</button>
+        <button onclick="openTab(event, 'Resume')">Resume</button>
+        <button onclick="openTab(event, 'ResearchJourney')">Research Journey</button>
+        <button onclick="openTab(event, 'Awards')">Awards</button>
+    </nav>
+    <div id="AboutMe" class="tabcontent active">
+        <h2>About Me</h2>
+        <p>Brief introduction about your background, interests, and professional focus.</p>
+    </div>
+    <div id="Portfolio" class="tabcontent">
+        <h2>Portfolio</h2>
+        <p>Highlights of your projects with links to GitHub or other repositories.</p>
+    </div>
+    <div id="Resume" class="tabcontent">
+        <h2>Resume</h2>
+        <p>Details about your work experience, skills, and education.</p>
+    </div>
+    <div id="ResearchJourney" class="tabcontent">
+        <h2>Research Journey</h2>
+        <p>A description of your research experiences, publications, and discoveries.</p>
+    </div>
+    <div id="Awards" class="tabcontent">
+        <h2>Awards</h2>
+        <p>A list of awards, recognitions, and honors you have received.</p>
+    </div>
+    <footer>
+        <p>&copy; 2024 Your Name. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, buttons;
+            tabcontent = document.querySelectorAll(".tabcontent");
+            buttons = document.querySelectorAll("nav button");
+            tabcontent.forEach(content => content.classList.remove("active"));
+            buttons.forEach(button => button.classList.remove("active"));
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+    </script>
+</body>
+</html>
