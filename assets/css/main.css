@@ -1764,9 +1764,7 @@ input, select, textarea {
 				width: 48px;
 				height: 48px;
 			}
-		.image.avatar-large {
-  			width: 200px;
-  			height: 200px;
+		
 		}
 
 		.image.fit {
